@@ -8,6 +8,7 @@ void main() {
     await tester.pumpWidget(TripMatchApp(tripRepository: repository));
 
     expect(find.text('TripMatch'), findsOneWidget);
-    expect(find.text('여행 성향 진단 시작하기'), findsOneWidget);
+    expect(find.text('이미 계정이 있습니다'), findsOneWidget);
+    expect(find.text('처음입니다'), findsOneWidget);
   });
 }

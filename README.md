@@ -79,26 +79,39 @@ frontend/
 - **브랜치 전략**: `main` 직접 push 금지, 기능 브랜치 → PR → merge
 - **상세 규칙**: [CONTRIBUTING.md](./CONTRIBUTING.md) 참고
 
-## 개발자 역할 분담
+## 작업 기록
 
-### 개발자 A
-- onboarding
-- quiz
-- travel type result
-- 공통 위젯: `option_card`, `progress_header`
-- **테스트**: iPhone (iOS)
+### 2026-06-20 · 윤지
 
-### 개발자 B
-- invite
-- matching result
-- adjustment
-- course recommendation
-- editable schedule
-- final schedule
-- 위젯: `course_card`, `itinerary_item_card`
-- **테스트**: Android / Samsung
+TripMatch Flutter 프론트엔드 초기 프로젝트 셋업 및 핵심 화면 플로우 구현.
 
-## 현재 상태
+- **프로젝트 생성**: `frontend/` Flutter 프로젝트 초기화 (`tripmatch`, iOS/Android 공통 코드베이스)
+- **코어 레이어**: `AppColors`, `AppTextStyles`, `AppTheme`, `go_router` 기반 라우트 설정
+- **공통 위젯**: `PrimaryButton`, `SecondaryButton`, `AppCard`, `OptionCard`, `TagChip`, `ProgressHeader`, `SectionTitle`
+- **데이터 레이어**: 모델(`travel_type`, `quiz_question`, `match_result`, `itinerary_item`), mock data, `TripRepository`(ChangeNotifier)
+- **화면 구현** (mock data 연결, 화면 간 이동 가능):
+  - Onboarding → Quiz(8문항) → Travel Type Result
+  - Invite(동행자 응답 대기 시뮬레이션) → Match Result
+  - Adjustment → Schedule Style → Course Recommendation
+  - Editable Schedule(ReorderableListView) → Final Schedule
+- **협업 문서**: `CONTRIBUTING.md` 작성, README에 실행 방법·폴더 구조·라우트·개발자 분담 정리
+- **검증**: `flutter analyze` 통과, smoke test 추가
 
-- 백엔드 미연동 — mock data로 전체 플로우 탐색 가능
-- `TripRepository`를 통해 추후 API 연동 시 data layer만 교체하면 됩니다
+### 2026-06-23 · 윤지
+
+앱 진입 플로우 확장 및 프로젝트 구조 정리.
+
+- **인증 화면 추가**: `LoginScreen`, `SignUpScreen` — 로그인/회원가입 UI, redirect 파라미터 지원
+- **홈·탐색 화면 추가**:
+  - `StartingScreen` — 앱 시작 진입점
+  - `HomeScreen` — 메인 홈 메뉴
+  - `BrowseTripsScreen` — 여행지 탐색
+  - `OngoingTripsScreen` / `OngoingTripDetailScreen` — 진행 중인 여행 목록·상세
+- **프로필·동행자**: `MyPageScreen`, `CompanionInviteScreen` 추가
+- **데이터·라우터 확장**:
+  - `OngoingTrip` 모델 및 mock data 보강
+  - `TripRepository` 상태·메서드 추가
+  - `/starting`, `/home`, `/login`, `/sign-up`, `/ongoing-trips`, `/browse-trips`, `/my-page`, `/companion-invite` 등 라우트 연결
+- **기존 화면 연동 수정**: Onboarding, Travel Type Result, Final Schedule 등 신규 플로우와 navigation 연결
+
+

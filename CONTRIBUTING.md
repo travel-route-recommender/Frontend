@@ -7,18 +7,12 @@ TripMatch 프론트엔드 협업 가이드입니다.
 - **`main` 직접 push 금지**
 - **`dev` 직접 push도 되도록 피하고 PR 권장**
 - 기능별 브랜치에서 작업 후 Pull Request로 merge
+- Pull Request날리고 카톡방에 알려주면 다른 사람들이 보고 merge하기 
 
 ### 브랜치 이름 예시
 
 ```
-feat/onboarding
-feat/quiz-flow
-feat/matching
-feat/course-recommendation
-feat/schedule-edit
-fix/quiz-navigation
-style/update-button-radius
-refactor/extract-tag-chip
+페이지별 vs 이름별
 ```
 
 ## 커밋 메시지
@@ -74,11 +68,3 @@ flutter run
 - [ ] 화면 간 navigation 정상 동작
 - [ ] analyze 오류 없음
 
-## 플랫폼 테스트 분담
-
-| 담당 | 기기 |
-|------|------|
-| 개발자 A | iPhone (iOS) |
-| 개발자 B | Android / Samsung |
-
-플랫폼별 코드 분리는 하지 않습니다. UI 이슈 발견 시 GitHub Issue에 기기/OS/스크린샷과 함께 등록해주세요.

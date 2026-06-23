@@ -1,5 +1,6 @@
 import 'package:tripmatch/data/models/itinerary_item.dart';
 import 'package:tripmatch/data/models/match_result.dart';
+import 'package:tripmatch/data/models/ongoing_trip.dart';
 import 'package:tripmatch/data/models/quiz_question.dart';
 import 'package:tripmatch/data/models/travel_type.dart';
 
@@ -223,4 +224,64 @@ abstract final class MockTripData {
     'match': '82%',
     'highlight': '바다 · 카페 · 맛집',
   };
+
+  static const List<OngoingTrip> ongoingTrips = [
+    OngoingTrip(
+      id: 'trip_1',
+      title: '강릉 1박 2일',
+      destination: '강릉 · 동해',
+      status: '조율 중',
+      progressLabel: 'AI 조율안까지 완료',
+      lastUpdated: '2일 전',
+      summary: '감성 여유형 + 알차게 즐기는 탐험형. 바다·카페 취향은 잘 맞고, 일정 속도 조율이 필요해요.',
+      currentStep: 4,
+    ),
+    OngoingTrip(
+      id: 'trip_2',
+      title: '제주 3박 4일',
+      destination: '제주도',
+      status: '조율 중',
+      progressLabel: '추천 코스 선택 중',
+      lastUpdated: '5일 전',
+      summary: '맛집과 자연을 함께 즐기는 코스를 고르는 중이에요.',
+      currentStep: 6,
+    ),
+    OngoingTrip(
+      id: 'trip_3',
+      title: '부산 당일치기',
+      destination: '부산',
+      status: '조율 중',
+      progressLabel: '성향 진단 완료',
+      lastUpdated: '1주 전',
+      summary: '개인 성향 결과까지 확인했어요. 동행자 매칭 결과를 기다리는 중이에요.',
+      currentStep: 3,
+    ),
+  ];
+
+  static const List<Map<String, String>> publicTrips = [
+    {
+      'author': '민지',
+      'destination': '강릉',
+      'title': '바다와 카페 중심 힐링 코스',
+      'summary': '안목해변 → 전망 카페 → 중앙시장 → 야경 산책',
+      'tags': '바다,카페,힐링',
+      'likes': '♥ 128',
+    },
+    {
+      'author': '준호',
+      'destination': '제주',
+      'title': '액티비티 + 맛집 알찬 코스',
+      'summary': '성산일출봉 → 흑돼지 → 카약 → 야시장',
+      'tags': '액티비티,맛집,자연',
+      'likes': '♥ 96',
+    },
+    {
+      'author': '수연',
+      'destination': '부산',
+      'title': '감성 사진 스팟 여행',
+      'summary': '감천문화마을 → 흰여울문화마을 → 광안리 야경',
+      'tags': '사진,감성,야경',
+      'likes': '♥ 74',
+    },
+  ];
 }

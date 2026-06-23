@@ -46,14 +46,16 @@ class TravelTypeResultScreen extends StatelessWidget {
               Text('당신의 여행 성향 카드', style: AppTextStyles.h1),
               const SizedBox(height: 24),
               TravelTypeCard(travelType: travelType),
+              if (repository.companionInvited) ...[
+                const SizedBox(height: 16),
+                Text(
+                  '동행자 초대 완료: ${repository.companionInviteInput}',
+                  style: AppTextStyles.bodySmall,
+                ),
+              ],
               const SizedBox(height: 32),
               PrimaryButton(
-                label: '동행자 초대하기',
-                onPressed: () => context.push(AppRoutes.invite),
-              ),
-              const SizedBox(height: 12),
-              PrimaryButton(
-                label: '매칭 결과 보기 (데모)',
+                label: '매칭 결과 보기',
                 onPressed: () => context.push(AppRoutes.matchResult),
               ),
               const SizedBox(height: 32),

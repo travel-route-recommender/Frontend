@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tripmatch/core/router/app_router.dart';
 import 'package:tripmatch/core/theme/app_colors.dart';
 import 'package:tripmatch/core/theme/app_text_styles.dart';
 import 'package:tripmatch/data/repositories/trip_repository.dart';
@@ -153,8 +154,8 @@ class FinalScheduleScreen extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               PrimaryButton(
-                label: '처음으로 돌아가기',
-                onPressed: () => context.go('/'),
+                label: '홈으로 돌아가기',
+                onPressed: () => context.go(AppRoutes.home),
               ),
               const SizedBox(height: 32),
             ],

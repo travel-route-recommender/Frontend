@@ -27,12 +27,6 @@ refactor: extract tag chip widget
 docs: update README route list
 ```
 
-## Pull Request
-
-1. PR 제목은 변경 내용을 한 줄로 요약
-2. **스크린샷 첨부** (UI 변경 시 필수)
-3. merge 전 **`flutter analyze` 실행** — 오류 없이 통과해야 합니다
-4. 리뷰어 1명 이상 approve 후 merge
 
 ## 공통 위젯 수정 시
 
